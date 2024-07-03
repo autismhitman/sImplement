@@ -1,0 +1,13 @@
+{
+
+ "url" : "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+ "username" : "Admin",
+ "password" : "admin123",
+ "overridereports":  "no",
+ "passedstepsscreenshot" :"no",
+ "failedstepsscreenshot" : "yes",
+ "skippedstepsscreenshot" : "no",
+  "retryfailedtests": "yes",
+  "runmode" : "local"
+
+} 
