@@ -11,7 +11,7 @@ import com.neopane.frameworkAnnotations.Annotations;
 import com.neopane.reports.ExtentLogger;
 import com.neopane.reports.ExtentManager;
 import com.neopane.reports.ExtentReport;
-import com.neopane.util.ELKUtils;
+
 
 public class Frameworklistener implements ITestListener, ISuiteListener{
 
@@ -36,22 +36,22 @@ public class Frameworklistener implements ITestListener, ISuiteListener{
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		 ExtentLogger.pass(result.getMethod().getMethodName());
-		 ELKUtils.getElkDocs(result.getMethod().getMethodName(), "Pass");
+		// ELKUtils.getElkDocs(result.getMethod().getMethodName(), "Pass");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 	
-	  //   ExtentLogger.fail (result.getThrowable().toString(), true) ;
-	  //   ExtentLogger.fail (Arrays.toString(result.getThrowable().getStackTrace()));
-		// ExtentLogger.fail(result.getMethod().getMethodName());
+	     ExtentLogger.fail (result.getThrowable().toString(), true) ;
+	    ExtentLogger.fail (Arrays.toString(result.getThrowable().getStackTrace()));
+		 ExtentLogger.fail(result.getMethod().getMethodName());
 		// ELKUtils.getElkDocs(result.getMethod().getMethodName(), "Fail");
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 	      ExtentLogger.skip(result.getMethod().getMethodName());
-	      ELKUtils.getElkDocs(result.getMethod().getMethodName(), "Skip");
+	    //  ELKUtils.getElkDocs(result.getMethod().getMethodName(), "Skip");
 	}
 
 	
